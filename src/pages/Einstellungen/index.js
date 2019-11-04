@@ -31,10 +31,10 @@ const Einstellungen = () => {
             </CardTitle>
             <Card>
                 {werte.map(([label, field], i) => (
-                    <>
-                        <LabelField key={i} field={field} label={label}/>
+                    <div key={i}>
+                        <LabelField field={field} label={label}/>
                         {i < werte.length - 1 && <hr color="lightgrey"/>}
-                    </>
+                    </div>
                 ))}
             </Card>
             <CardTitle>
@@ -42,10 +42,10 @@ const Einstellungen = () => {
             </CardTitle>
             <Card>
                 {dienste.map((dienst, i) => (
-                    <>
-                        <CheckBoxDetails key={i} value={dienst}/>
+                    <div key={i}>
+                        <CheckBoxDetails value={dienst}/>
                         {i < dienste.length - 1 && <hr color="lightgrey"/>}
-                    </>
+                    </div>
                 ))}
             </Card>
         </Container>

@@ -23,10 +23,6 @@ const Box = styled.input`
     whitespace: pre;
 `;
 
-const Right = styled.div`
-    text-align: right;
-`;
-
 const CheckBoxDetails = ({value}) => {
     return (
         <Container>

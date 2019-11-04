@@ -5,8 +5,15 @@ import styled from "styled-components";
 import { theme } from "../theme";
 
 export const Root = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     background-color: #ECEDEE;
     font-family: sans-serif;
+`;
+
+export const Body = styled.div`
+    flex: 1 0 auto;
 `;
 
 export const Shadows = {
