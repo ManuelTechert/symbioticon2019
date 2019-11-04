@@ -4,6 +4,11 @@ import { css } from "styled-components";
 import styled from "styled-components";
 import { theme } from "../theme";
 
+export const Root = styled.div`
+    background-color: #ECEDEE;
+    font-family: sans-serif;
+`;
+
 export const Shadows = {
     default: css`
     box-shadow: ${theme.shadows.default};

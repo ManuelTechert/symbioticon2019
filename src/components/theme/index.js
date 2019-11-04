@@ -1,6 +1,9 @@
 // contains globally used colors, animations, shadows and stuff
 
 export const theme = {
+    root: {
+        backgroundColor: "#ECEDEE"
+    },
     bg: {
         wash: "#F6F7F8",
         default: "#FFF",
