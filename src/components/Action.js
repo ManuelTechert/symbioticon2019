@@ -1,13 +1,42 @@
 import React, { useState } from 'react'
-import { Smaller } from '../components/globals/index'
+import styled from 'styled-components'
+import { theme } from '../components/theme'
 import { Row, Item } from './Flex'
-import { CheckCircle, Circle } from 'react-feather'
 
+import checked from '../Assets/checked.svg'
+import unchecked from '../Assets/unchecked.svg'
+
+const TaskTitle = styled.h3`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0px;
+`
 const ActionCheck = ({ check, setCheck }) => {
   return (
     <div onClick={() => setCheck(!check)}>
-      {check ? <CheckCircle style={{ color: 'green' }} /> : <Circle />}
+      {check ? <ActionChecked /> : <ActionUnchecked />}
     </div>
+  )
+}
+
+const ActionChecked = () => {
+  return (
+    <img
+      src={checked}
+      alt="checked"
+      style={{ height: '32px', width: '32px' }}
+    />
+  )
+}
+
+const ActionUnchecked = () => {
+  return (
+    <img
+      src={unchecked}
+      alt="unchecked"
+      style={{ height: '32px', width: '32px' }}
+    />
   )
 }
 
@@ -15,14 +44,12 @@ const Action = ({ action, time, checked }) => {
   const [check, setCheck] = useState(checked)
 
   return (
-    <Row>
+    <Row style={{ alignItems: 'center' }}>
       <Item flex={5}>
-        {action}
-        <Smaller>{time}</Smaller>
+        <TaskTitle>{action}</TaskTitle>
+        <span>{time}</span>
       </Item>
-      <Item justifyContent="flex-end">
-        <ActionCheck check={check} setCheck={setCheck} />
-      </Item>
+      <ActionCheck check={check} setCheck={setCheck} />
     </Row>
   )
 }
