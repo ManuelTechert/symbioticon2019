@@ -45,7 +45,7 @@ const Footer = () => {
                     <Compass height="50px"/>
                     <Subtitel>Tools</Subtitel>
                 </Col>
-                <Col>
+                <Col onClick={() => history.push(`/training`)}>
                     <BarChart2 height="50px"/>
                     <Subtitel>Training</Subtitel>
                 </Col>

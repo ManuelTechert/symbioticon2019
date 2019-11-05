@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import Login from "./pages/Login";
 import DeinWeg from "./pages/DeinWeg";
 import Home from "./pages/Home";
+import Training from "./pages/Training";
 
 const PageWrapper = ({userId, children}) => {
     const childrenWithProps = React.Children.map(
@@ -58,6 +59,11 @@ function App() {
                     <Route path="/deinweg">
                         <PageWrapper userId={userId}>
                             <DeinWeg/>
+                        </PageWrapper>
+                    </Route>
+                    <Route path="/training">
+                        <PageWrapper userId={userId}>
+                            <Training/>
                         </PageWrapper>
                     </Route>
                     <Route>

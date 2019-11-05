@@ -3,11 +3,14 @@ import {CardTitle, Container, Title, Card, Smaller} from "../../components/globa
 import {Row, Item} from "../../components/Flex";
 import Plant from './Plant.svg'
 import FitnessTracker from './fitness_tracker.svg'
+import Lowpoints from './LowPoints.svg'
+import Mediumpoints from './MediumPoints.svg'
+import Highpoints from './Highpoints.svg'
 
 const DeinWeg = (props) => {
     const {userId} = props;
     if (userId === 0) return <DeinWegEinsteiger/>;
-    
+
     return <DeinWegProfi />;
 };
 
@@ -20,7 +23,7 @@ const DeinWegEinsteiger = () => {
             </Title>
             <Row style={{paddingBottom: "10px"}}>
                 <Item>
-                    O
+                    <img src={Lowpoints} alt="low"/>
                 </Item>
                 <Item flex={2}>
                     <div style={{ fontSize: "70%" }}>32 Punkte</div>
@@ -30,7 +33,7 @@ const DeinWegEinsteiger = () => {
             </Row>
             <Row style={{paddingBottom: "10px"}}>
                 <Item>
-                    O
+                    <img src={Mediumpoints} alt="medium"/>
                 </Item>
                 <Item flex={2}>
                     <div style={{ fontSize: "120%" }}>97 Punkte</div>
@@ -40,7 +43,7 @@ const DeinWegEinsteiger = () => {
             </Row>
             <Row>
                 <Item>
-                    O
+                    <img src={Highpoints} alt="high"/>
                 </Item>
                 <Item flex={2}>
                     <div style={{ fontSize: "70%" }}>107 Punkte</div>
