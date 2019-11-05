@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Home, Map, BarChart2, Compass } from 'react-feather'
 import { useHistory } from 'react-router-dom'
+import { theme } from '../theme'
 
 const Container = styled.div`
   flex-shrink: 0;
@@ -12,6 +13,7 @@ const Container = styled.div`
   left: 0;
   width: 100%;
   z-index: 5;
+  border-top: 1px solid ${theme.brand.lightblue};
 `
 
 const ColContainer = styled.div`
