@@ -3,14 +3,25 @@ import {CardTitle, Container, Title, Card} from "../../components/globals";
 import LabelField from "../../components/LabelField";
 import Avatar from "../../components/Avatar";
 import CheckBoxDetails from "../../components/CheckBoxDetails";
+import {useParams} from 'react-router-dom';
 
 const werte = [
-    ['Vorname', 'John'],
-    ['Nachname', 'Doe'],
-    ['Geburtstag', '21.04.1992'],
-    ['Geschlecht', 'Männlich'],
-    ['Größe', '182 cm'],
-    ['Gewicht', '84 kg'],
+    [
+        ['Vorname', 'John'],
+        ['Nachname', 'Doe'],
+        ['Geburtstag', '21.04.1992'],
+        ['Geschlecht', 'Männlich'],
+        ['Größe', '182 cm'],
+        ['Gewicht', '84 kg'],
+    ],
+    [
+        ['Vorname', 'Johanna'],
+        ['Nachname', 'Sportivo'],
+        ['Geburtstag', '21.04.1992'],
+        ['Geschlecht', 'Weiblich'],
+        ['Größe', '175 cm'],
+        ['Gewicht', '65 kg'],
+    ],
 ];
 
 const dienste = [
@@ -20,7 +31,11 @@ const dienste = [
     ['Headspace'],
 ];
 
-const Einstellungen = () => {
+const Einstellungen = (props) => {
+    const { userId } = useParams();
+    const id = userId ? userId : props.userId;
+    const user = werte[id];
+
     return (
         <Container>
             <Title>
@@ -30,10 +45,10 @@ const Einstellungen = () => {
                 Profil
             </CardTitle>
             <Card>
-                {werte.map(([label, field], i) => (
+                {user.map(([label, field], i) => (
                     <div key={i}>
                         <LabelField field={field} label={label}/>
-                        {i < werte.length - 1 && <hr color="lightgrey"/>}
+                        {i < user.length - 1 && <hr color="lightgrey"/>}
                     </div>
                 ))}
             </Card>
