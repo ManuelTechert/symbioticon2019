@@ -1,8 +1,8 @@
 // global helpers and functions
 
-import { css } from "styled-components";
+import {css} from "styled-components";
 import styled from "styled-components";
-import { theme } from "../theme";
+import {theme} from "../theme";
 
 export const Root = styled.div`
     display: flex;
@@ -10,6 +10,7 @@ export const Root = styled.div`
     height: 100vh;
     background-color: #ECEDEE;
     font-family: sans-serif;
+    align-items; flex-start;
 `;
 
 export const Body = styled.div`

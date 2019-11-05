@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Home, Map, BarChart2} from 'react-feather'
 
-const Background = styled.div`
+const Container = styled.div`
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -26,7 +26,7 @@ const Subtitel = styled.div`
 
 const Footer = () => {
     return (
-        <Background>
+        <Container>
             <Col>
                 <Home height="50px"/>
                 <Subtitel>Home</Subtitel>
@@ -39,7 +39,7 @@ const Footer = () => {
                 <BarChart2 height="50px"/>
                 <Subtitel>Training</Subtitel>
             </Col>
-        </Background>
+        </Container>
     )
 };
 
