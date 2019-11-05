@@ -17,8 +17,20 @@ export const Body = styled.div`
     flex-grow: 1;
 `;
 
-export const Larger = styled.span`
+export const Larger = styled.div`
     font-size: larger;
+    margin-bottom: 5px;
+`;
+
+export const Smaller = styled.div`
+    margin-top: 5px;
+    font-size: smaller;
+`;
+
+export const SmallRedCenter = styled.div`
+    font-size: x-small;
+    color: red;
+    text-align: center;
 `;
 
 export const Shadows = {

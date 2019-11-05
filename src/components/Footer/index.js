@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Home, Map, BarChart2} from 'react-feather'
+import {Home, Map, BarChart2, Compass} from 'react-feather'
 import {useHistory} from "react-router-dom";
 
 const Container = styled.div`
@@ -40,6 +40,10 @@ const Footer = () => {
                 <Col onClick={() => history.push(`/deinweg`)}>
                     <Map height="50px"/>
                     <Subtitel>Dein Weg</Subtitel>
+                </Col>
+                <Col onClick={() => history.push(`/tools`)}>
+                    <Compass height="50px"/>
+                    <Subtitel>Tools</Subtitel>
                 </Col>
                 <Col>
                     <BarChart2 height="50px"/>

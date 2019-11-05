@@ -1,9 +1,11 @@
 import React from 'react'
-import {CardTitle, Container, Title, Card} from "../../components/globals";
+import {CardTitle, Container, Title, Card, Smaller, SmallRedCenter} from "../../components/globals";
 import LabelField from "../../components/LabelField";
 import Avatar from "../../components/Avatar";
 import CheckBoxDetails from "../../components/CheckBoxDetails";
 import {useParams} from 'react-router-dom';
+import TextDetails from "../../components/TextDetails";
+import ukvSource from './url.png'
 
 const werte = [
     [
@@ -25,11 +27,10 @@ const werte = [
 ];
 
 const dienste = [
-    ['fitbit'],
     ['Google Calendar'],
-    ['SleepCycle'],
-    ['Headspace'],
 ];
+
+const ukv = <img src={ukvSource} alt="ukv" width="30%"/>;
 
 const Einstellungen = (props) => {
     const { userId } = useParams();
@@ -54,6 +55,10 @@ const Einstellungen = (props) => {
             </Card>
             <CardTitle>
                 Verbundene Dienste
+                <Smaller>
+                    Je mehr Dienste du verbindest, desto persönlicher und passender können wir die neue Erkenntnisse und
+                    neue Aktionen geben.
+                </Smaller>
             </CardTitle>
             <Card>
                 {dienste.map((dienst, i) => (
@@ -63,6 +68,22 @@ const Einstellungen = (props) => {
                     </div>
                 ))}
             </Card>
+            <SmallRedCenter>
+                MEHR DIENSTE VERBINDEN
+            </SmallRedCenter>
+            <CardTitle>
+                Deine Versicherung
+                <Smaller>
+                    Mit der Anbindung an deine Krankenversicherung erhältst du exklusive Angebote und basierend auf
+                    deinen Punkten einen Rabatt auf deinen Beitrag!
+                </Smaller>
+            </CardTitle>
+            <Card>
+                <TextDetails value={ukv} />
+            </Card>
+            <SmallRedCenter>
+                GESUNDHEITSPARNER ÄNDERN
+            </SmallRedCenter>
         </Container>
     )
 };

@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import {CardTitle, Container, Title, Card} from "../../components/globals";
 import LabelField from "../../components/LabelField";
 import Button from "../../components/Button";
 
-const Login = ({ setUserId }) => {
+const Login = ({setUserId}) => {
     const [benutzer, setBenutzer] = useState('doe');
     const [password, setPassword] = useState('');
 
-    const inputLabel = <input value={benutzer} onChange={e => setBenutzer(e.target.value)} autoFocus />;
-    const inputPassword = <input type='password' value={password} onChange={e => setPassword(e.target.value)} />;
+    const inputLabel = <input value={benutzer} onChange={e => setBenutzer(e.target.value)} autoFocus/>;
+    const inputPassword = <input type='password' value={password} onChange={e => setPassword(e.target.value)}/>;
 
     return (
         <Container>
@@ -19,8 +19,8 @@ const Login = ({ setUserId }) => {
                 Login
             </CardTitle>
             <Card>
-                        <LabelField label="Benutzer" field={inputLabel}/>
-                        <hr color="lightgrey"/>
+                <LabelField label="Benutzer" field={inputLabel}/>
+                <hr color="lightgrey"/>
                 <LabelField label="Passwort" field={inputPassword}/>
             </Card>
             <Button onClick={() => {

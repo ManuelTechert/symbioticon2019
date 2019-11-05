@@ -13,4 +13,16 @@ const MyButton = styled.div`
 
 const Button = props => <MyButton {...props}/>;
 
+const SmallButton = styled.div`
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    font-size: small;
+`;
+
+export const ButtonSmall = props => <SmallButton {...props}/>;
+
 export default Button

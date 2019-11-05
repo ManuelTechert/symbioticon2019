@@ -9,6 +9,7 @@ import {Root, Body} from "./components/globals";
 import Footer from './components/Footer'
 import Login from "./pages/Login";
 import DeinWeg from "./pages/DeinWeg";
+import Home from "./pages/Home";
 
 const PageWrapper = ({userId, children}) => {
     const childrenWithProps = React.Children.map(
@@ -61,7 +62,7 @@ function App() {
                     </Route>
                     <Route>
                         <PageWrapper userId={userId}>
-                            <Einstellungen />
+                            <Home />
                         </PageWrapper>
                     </Route>
                 </Switch>
