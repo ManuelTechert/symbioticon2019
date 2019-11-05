@@ -14,42 +14,9 @@ import user from '../../Assets/User.png'
 import { useHistory } from 'react-router-dom'
 import { Item, Row } from '../../components/Flex'
 import WomanRunning from './woman_running.svg'
+import tracker from '../../Assets/draw-tracker.svg'
 import { theme } from '../../components/theme'
 import { Ball, BallContainer } from './style'
-
-// const FilledBall = ({ text }) => (
-//   <span
-//     style={{
-//       backgroundColor: '#5C6166',
-//       color: 'white',
-//       borderRadius: '100%',
-//       margin: '4px',
-//       padding: '6px',
-//       width: '16px',
-//       height: '16px',
-//       textAlign: 'center',
-//     }}
-//   >
-//     {text}
-//   </span>
-// )
-
-// const Ball = ({ text }) => (
-//   <span
-//     style={{
-//       border: '1px solid #5C6166',
-//       color: '#5C6166',
-//       borderRadius: '100%',
-//       margin: '4px',
-//       padding: '4px',
-//       width: '16px',
-//       height: '16px',
-//       textAlign: 'center',
-//     }}
-//   >
-//     {text}
-//   </span>
-// )
 
 const Woche = () => {
   return (
@@ -140,8 +107,17 @@ const Home = props => {
       ))}
       <Card bg={theme.brand.lightblue}>
         <CardTitle>Über thrive</CardTitle>
-        Wir zeigen Dir, wie du aus deinen Gesundheitsdaten mehr machen kannst.
-        Schritt für Schritt zum gesünderen Ich!
+        <Row style={{ alignItems: 'flex-end', margin: 'auto' }}>
+          <span>
+            Wir zeigen Dir, wie du aus deinen Gesundheitsdaten mehr machen
+            kannst. Schritt für Schritt zum gesünderen Ich!
+          </span>
+          <img
+            style={{ width: 'auto', height: '96px' }}
+            src={tracker}
+            alt="activity-trackker"
+          />
+        </Row>
       </Card>
       <Subheading>Deine Aufgaben</Subheading>
       {actions.map(([aufgabe, time, checked], i) => (
