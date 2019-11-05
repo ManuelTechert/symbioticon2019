@@ -7,6 +7,11 @@ const Container = styled.div`
   flex-shrink: 0;
   height: 80px;
   background-color: #f6f6f6;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
 `
 
 const ColContainer = styled.div`

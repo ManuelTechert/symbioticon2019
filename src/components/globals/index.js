@@ -5,12 +5,8 @@ import styled from 'styled-components'
 import { theme } from '../theme'
 
 export const Root = styled.div`
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #ECEDEE;
-    font-family: sans-serif;
-    align-items; stretch;
+  display: flex;
+  flex-direction: column;
 `
 
 export const Body = styled.div`
@@ -20,6 +16,10 @@ export const Body = styled.div`
 export const Larger = styled.div`
   font-size: larger;
   margin-bottom: 5px;
+`
+export const Subheading = styled.h1`
+  font-weight: bold;
+  font-size: 24px;
 `
 
 export const Smaller = styled.div`
@@ -58,21 +58,21 @@ export const Title = styled.h1`
   font-size: 32px;
   font-weight: 700;
 `
-export const Orange = styled.span`
-  color: ${theme.brand.default};
-`
 export const CardContainer = styled.div`
   margin-bottom: 30px;
 `
 export const CardTitle = styled.h2`
   font-size: 20px;
   font-weight: 500;
+  margin-top: auto;
+  margin-bottom: 8px;
 `
 export const Card = styled.div`
-    background-color: ${theme.bg.default};
+    background-color: ${props => (props.bg ? props.bg : theme.bg.default)};
     border-radius 12px;
     padding: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+    font-size: 16px;
 
     ${Shadows.default};
 
