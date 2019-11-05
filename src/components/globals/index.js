@@ -1,8 +1,8 @@
 // global helpers and functions
 
-import {css} from "styled-components";
-import styled from "styled-components";
-import {theme} from "../theme";
+import { css } from 'styled-components'
+import styled from 'styled-components'
+import { theme } from '../theme'
 
 export const Root = styled.div`
     display: flex;
@@ -11,63 +11,63 @@ export const Root = styled.div`
     background-color: #ECEDEE;
     font-family: sans-serif;
     align-items; stretch;
-`;
+`
 
 export const Body = styled.div`
-    flex-grow: 1;
-`;
+  flex-grow: 1;
+`
 
 export const Larger = styled.div`
-    font-size: larger;
-    margin-bottom: 5px;
-`;
+  font-size: larger;
+  margin-bottom: 5px;
+`
 
 export const Smaller = styled.div`
-    margin-top: 5px;
-    font-size: smaller;
-`;
+  margin-top: 5px;
+  font-size: smaller;
+`
 
 export const SmallRedCenter = styled.div`
-    font-size: x-small;
-    color: red;
-    text-align: center;
-`;
+  font-size: x-small;
+  color: red;
+  text-align: center;
+`
 
 export const Shadows = {
-    default: css`
+  default: css`
     box-shadow: ${theme.shadows.default};
     transition: ${theme.animations.default};
   `,
-    hover: css`
+  hover: css`
     box-shadow: ${theme.shadows.hover};
     transition: ${theme.animations.hover};
   `,
-    active: css`
+  active: css`
     box-shadow: ${theme.shadows.active};
     transition: ${theme.animations.active};
   `,
-};
+}
 
 // global styled components
 export const Container = styled.div`
   padding: 16px;
   display: flex;
   flex-direction: column;
-`;
+`
 export const Title = styled.h1`
   font-size: 32px;
   font-weight: 700;
-`;
+`
 export const Orange = styled.span`
   color: ${theme.brand.default};
-`;
+`
 export const CardContainer = styled.div`
   margin-bottom: 30px;
-`;
+`
 export const CardTitle = styled.h2`
   font-size: 20px;
   font-weight: 500;
-`;
+`
 export const Card = styled.div`
     background-color: ${theme.bg.default};
     border-radius 12px;
@@ -83,7 +83,7 @@ export const Card = styled.div`
   &:active {
     ${Shadows.active};
   }
-`;
+`
 
 // css for blog content (written), so I mean content is THE REAL content
 export const Content = css`
@@ -171,46 +171,46 @@ export const Content = css`
   strong {
     font-weight: 600;
   }
-`;
+`
 
 // input: color and amount the color should be tinted. Returns the tinted color
 export const tint = (hex, amount) => {
-    let R = parseInt(hex.substring(1, 3), 16);
-    let G = parseInt(hex.substring(3, 5), 16);
-    let B = parseInt(hex.substring(5, 7), 16);
+  let R = parseInt(hex.substring(1, 3), 16)
+  let G = parseInt(hex.substring(3, 5), 16)
+  let B = parseInt(hex.substring(5, 7), 16)
 
-    const getSingle = number => parseInt((number * (100 + amount)) / 100, 10);
+  const getSingle = number => parseInt((number * (100 + amount)) / 100, 10)
 
-    R = getSingle(R);
-    G = getSingle(G);
-    B = getSingle(B);
+  R = getSingle(R)
+  G = getSingle(G)
+  B = getSingle(B)
 
-    R = R < 255 ? R : 255;
-    G = G < 255 ? G : 255;
-    B = B < 255 ? B : 255;
+  R = R < 255 ? R : 255
+  G = G < 255 ? G : 255
+  B = B < 255 ? B : 255
 
-    const getDouble = number =>
-        number.toString(16).length === 1
-            ? `0${number.toString(16)}`
-            : number.toString(16);
+  const getDouble = number =>
+    number.toString(16).length === 1
+      ? `0${number.toString(16)}`
+      : number.toString(16)
 
-    const RR = getDouble(R);
-    const GG = getDouble(G);
-    const BB = getDouble(B);
+  const RR = getDouble(R)
+  const GG = getDouble(G)
+  const BB = getDouble(B)
 
-    return `#${RR}${GG}${BB}`;
-};
+  return `#${RR}${GG}${BB}`
+}
 
 // convert to rgb
 export const hexa = (hex, alpha) => {
-    const r = parseInt(hex.slice(1, 3), 16);
+  const r = parseInt(hex.slice(1, 3), 16)
 
-    const g = parseInt(hex.slice(3, 5), 16);
+  const g = parseInt(hex.slice(3, 5), 16)
 
-    const b = parseInt(hex.slice(5, 7), 16);
+  const b = parseInt(hex.slice(5, 7), 16)
 
-    if (alpha >= 0) {
-        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-    }
-    return `rgb(${r}, ${g}, ${b})`;
-};
+  if (alpha >= 0) {
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
+  }
+  return `rgb(${r}, ${g}, ${b})`
+}
