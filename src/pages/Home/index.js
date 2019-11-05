@@ -42,9 +42,9 @@ const Woche = ({tag}) => {
         <div style={{width: '100%', marginLeft: 'auto', marginRight: 'auto'}}>
             {['M', 'D', 'M', 'D', 'F'].map((t, i) => {
                 if (i < tag) {
-                    return <FilledBall key={t} text={t}/>
+                    return <FilledBall key={i} text={t}/>
                 } else {
-                    return <Ball key={t} text={t}/>
+                    return <Ball key={i} text={t}/>
                 }
             })
             }

@@ -30,22 +30,24 @@ const Subtitel = styled.div`
 const Footer = () => {
     const history = useHistory();
 
+    const styleFunction = path => ({ color: path === history.location.pathname ? "#FF5A5F" : "#5C6166"});
+
     return (
         <Container>
             <ColContainer>
-                <Col onClick={() => history.push('/')}>
+                <Col onClick={() => history.push('/')} style={styleFunction('/')}>
                     <Home height="50px"/>
                     <Subtitel>Home</Subtitel>
                 </Col>
-                <Col onClick={() => history.push(`/deinweg`)}>
+                <Col onClick={() => history.push(`/deinweg`)} style={styleFunction('/deinweg')}>
                     <Map height="50px"/>
                     <Subtitel>Dein Weg</Subtitel>
                 </Col>
-                <Col onClick={() => history.push(`/tools`)}>
+                <Col onClick={() => history.push(`/thrive`)} style={styleFunction('/thrive')}>
                     <Compass height="50px"/>
-                    <Subtitel>Tools</Subtitel>
+                    <Subtitel>Thrive</Subtitel>
                 </Col>
-                <Col onClick={() => history.push(`/training`)}>
+                <Col onClick={() => history.push(`/training`)} style={styleFunction('/training')}>
                     <BarChart2 height="50px"/>
                     <Subtitel>Training</Subtitel>
                 </Col>
