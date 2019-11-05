@@ -17,15 +17,15 @@ import ukvSource from './url.png'
 const werte = [
   [
     ['Vorname', 'John'],
-    ['Nachname', 'Doe'],
+    ['Nachname', 'Deere'],
     ['Geburtstag', '21.04.1992'],
     ['Geschlecht', 'Männlich'],
     ['Größe', '182 cm'],
     ['Gewicht', '84 kg'],
   ],
   [
-    ['Vorname', 'Johanna'],
-    ['Nachname', 'Sportivo'],
+    ['Vorname', 'Sarah'],
+    ['Nachname', 'Connor'],
     ['Geburtstag', '21.04.1992'],
     ['Geschlecht', 'Weiblich'],
     ['Größe', '175 cm'],
