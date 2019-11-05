@@ -33,7 +33,17 @@ const werte = [
   ],
 ]
 
-const dienste = [['Google Calendar']]
+const dienste = [
+  [
+    ['Google Calendar']
+  ],
+  [
+    ['fitbit'],
+    ['Google Calendar'],
+    ['SleepCycle'],
+    ['Headspace'],
+  ]
+]
 
 const ukv = <img src={ukvSource} alt="ukv" width="30%" />
 
@@ -45,7 +55,7 @@ const Einstellungen = props => {
   return (
     <Container>
       <Title>
-        <LabelField label="Einstellungen" field={<Avatar name="boy.png" />} />
+        <LabelField label="Einstellungen" field={<Avatar id={id} />} />
       </Title>
       <CardTitle>Profil</CardTitle>
       <Card>
@@ -64,10 +74,10 @@ const Einstellungen = props => {
         </Smaller>
       </CardTitle>
       <Card>
-        {dienste.map((dienst, i) => (
+        {dienste[id].map((dienst, i) => (
           <div key={i}>
             <CheckBoxDetails value={dienst} />
-            {i < dienste.length - 1 && <hr color="lightgrey" />}
+            {i < dienste[id].length - 1 && <hr color="lightgrey" />}
           </div>
         ))}
       </Card>
