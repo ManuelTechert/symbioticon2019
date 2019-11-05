@@ -3,63 +3,63 @@ import {
   Card,
   CardTitle,
   Container,
-  Larger,
   SmallRedCenter,
   Title,
+  Subheading,
 } from '../../components/globals'
 import { ButtonSmall } from '../../components/Button'
 import Action from '../../components/Action'
 import LabelField from '../../components/LabelField'
-import { User } from 'react-feather'
+import user from '../../Assets/User.png'
 import { useHistory } from 'react-router-dom'
 import { Item, Row } from '../../components/Flex'
 import WomanRunning from './woman_running.svg'
+import { theme } from '../../components/theme'
+import { Ball, BallContainer } from './style'
 
-const FilledBall = ({ text }) => (
-  <span
-    style={{
-      backgroundColor: '#5C6166',
-      color: 'white',
-      borderRadius: '100%',
-      margin: '4px',
-      padding: '6px',
-      width: '16px',
-      height: '16px',
-      textAlign: 'center',
-    }}
-  >
-    {text}
-  </span>
-)
+// const FilledBall = ({ text }) => (
+//   <span
+//     style={{
+//       backgroundColor: '#5C6166',
+//       color: 'white',
+//       borderRadius: '100%',
+//       margin: '4px',
+//       padding: '6px',
+//       width: '16px',
+//       height: '16px',
+//       textAlign: 'center',
+//     }}
+//   >
+//     {text}
+//   </span>
+// )
 
-const Ball = ({ text }) => (
-  <span
-    style={{
-      border: '1px solid #5C6166',
-      color: '#5C6166',
-      borderRadius: '100%',
-      margin: '4px',
-      padding: '4px',
-      width: '16px',
-      height: '16px',
-      textAlign: 'center',
-    }}
-  >
-    {text}
-  </span>
-)
+// const Ball = ({ text }) => (
+//   <span
+//     style={{
+//       border: '1px solid #5C6166',
+//       color: '#5C6166',
+//       borderRadius: '100%',
+//       margin: '4px',
+//       padding: '4px',
+//       width: '16px',
+//       height: '16px',
+//       textAlign: 'center',
+//     }}
+//   >
+//     {text}
+//   </span>
+// )
 
-const Woche = ({ tag }) => {
+const Woche = () => {
   return (
-    <div style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
-      {['M', 'D', 'M', 'D', 'F'].map((t, i) => {
-        if (i < tag) {
-          return <FilledBall key={i} text={t} />
-        } else {
-          return <Ball key={i} text={t} />
-        }
-      })}
-    </div>
+    <BallContainer>
+      <Ball filled>M</Ball>
+      <Ball filled>D</Ball>
+      <Ball>M</Ball>
+      <Ball>D</Ball>
+      <Ball>F</Ball>
+    </BallContainer>
   )
 }
 
@@ -119,8 +119,10 @@ const Home = props => {
         <LabelField
           label="Home"
           field={
-            <User
-              style={{ color: '#FF5A5F' }}
+            <img
+              src={user}
+              style={{ width: '32px' }}
+              alt="user"
               onClick={() => history.push('/profile')}
             />
           }
@@ -129,19 +131,19 @@ const Home = props => {
       {hinweise.map(([title, component, path], i) => (
         <Card
           key={i}
-          style={{ backgroundColor: '#F4D96D' }}
-          onClick={() => history.push(path)}
+          bg={theme.brand.yellow}
+          // onClick={() => history.push(path)}
         >
-          <Larger>{title}</Larger>
+          <CardTitle>{title}</CardTitle>
           {component}
         </Card>
       ))}
-      <Card>
-        <Larger>Über thrive</Larger>
+      <Card bg={theme.brand.lightblue}>
+        <CardTitle>Über thrive</CardTitle>
         Wir zeigen Dir, wie du aus deinen Gesundheitsdaten mehr machen kannst.
         Schritt für Schritt zum gesünderen Ich!
       </Card>
-      <CardTitle>Deine Aufgaben</CardTitle>
+      <Subheading>Deine Aufgaben</Subheading>
       {actions.map(([aufgabe, time, checked], i) => (
         <Card key={i} style={{ backgroundColor: '#F4D96D' }}>
           <Action action={aufgabe} time={time} checked={checked} />

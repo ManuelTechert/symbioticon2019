@@ -22,6 +22,12 @@ export const theme = {
   brand: {
     default: '#FC642D',
     alt: '#FFD2C1',
+    yellow: '#F4D96D',
+    red: '#FF5A5F',
+    blue: '#0C81F6',
+    darkblue: '#212A39',
+    grey: '#5C6166',
+    lightblue: '#D6DCE7',
   },
   social: {
     facebook: '#3B5998',
