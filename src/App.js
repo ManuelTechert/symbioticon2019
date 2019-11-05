@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,27 +7,66 @@ import {
 import Einstellungen from "./pages/Einstellungen";
 import {Root, Body} from "./components/globals";
 import Footer from './components/Footer'
+import Login from "./pages/Login";
+import DeinWeg from "./pages/DeinWeg";
 
-function App() {
+const PageWrapper = ({userId, children}) => {
+    const childrenWithProps = React.Children.map(
+        children,
+        (child, i) => {
+            return React.cloneElement(child, {
+                userId,
+                index: i
+            });
+        }
+    );
+
     return (
         <Root>
             <Body>
-                <Router>
-                    <Switch>
-                        <Route exact path="/">
-                            <Einstellungen/>
-                        </Route>
-                    </Switch>
-                </Router>
-                <div style={{fontSize: "0px"}}>
-                    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik"
-                                          title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
-                                                                              title="Flaticon">www.flaticon.com</a>
-                    </div>
-                </div>
+                {childrenWithProps}
             </Body>
             <Footer/>
         </Root>
+    )
+};
+
+function App() {
+    const [userId, setUserId] = useState(null);
+    if (userId == null) {
+        return (
+            <div style={{height: '100%', margin: 0}}>
+                <Root>
+                    <Body>
+                        <Login setUserId={setUserId}/>
+                    </Body>
+                </Root>
+            </div>
+        )
+    }
+
+    return (
+        <div style={{height: '100%', margin: 0}}>
+            <Router>
+                <Switch>
+                    <Route path="/profile">
+                        <PageWrapper userId={userId}>
+                            <Einstellungen/>
+                        </PageWrapper>
+                    </Route>
+                    <Route path="/deinweg">
+                        <PageWrapper userId={userId}>
+                            <DeinWeg/>
+                        </PageWrapper>
+                    </Route>
+                    <Route>
+                        <PageWrapper userId={userId}>
+                            <Einstellungen />
+                        </PageWrapper>
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
     );
 }
 

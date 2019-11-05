@@ -7,14 +7,18 @@ import {theme} from "../theme";
 export const Root = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #ECEDEE;
     font-family: sans-serif;
-    align-items; flex-start;
+    align-items; stretch;
 `;
 
 export const Body = styled.div`
-    flex: 1 0 auto;
+    flex-grow: 1;
+`;
+
+export const Larger = styled.span`
+    font-size: larger;
 `;
 
 export const Shadows = {
@@ -56,6 +60,7 @@ export const Card = styled.div`
     background-color: ${theme.bg.default};
     border-radius 12px;
     padding: 16px;
+    margin-bottom: 10px;
 
     ${Shadows.default};
 
