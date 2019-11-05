@@ -7,17 +7,17 @@ import Thrive2 from './Thrive2.svg'
 import Thrive3 from './Thrive3.svg'
 import Thrive4 from './Thrive4.svg'
 
-const Thrive = (props) => {
+const Thrive = props => {
   const { userId } = props
-  if (userId === 0) return <ThriveEinsteiger/>
+  if (userId === 0) return <ThriveEinsteiger />
 
-  return <ThriveProfi/>
+  return <ThriveProfi />
 }
 
 const ThriveEinsteiger = () => {
   return (
     <Container>
-      <Title>Neue Challenges</Title>
+      <Title>Thrive</Title>
       <Row style={{ paddingBottom: '10px' }}>
         <Item>
           <img src={Thrive0} alt="low" width="100%" />
@@ -40,7 +40,7 @@ const ThriveEinsteiger = () => {
 const ThriveProfi = () => {
   return (
     <Container>
-      <Title>Thrive!</Title>
+      <Title>Thrive</Title>
       <Row style={{ paddingBottom: '10px' }}>
         <Item>
           <img src={Thrive0} alt="low" width="100%" />

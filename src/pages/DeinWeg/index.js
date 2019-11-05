@@ -23,7 +23,6 @@ import {
   Points,
   Cashback,
   Context,
-  Dots,
   PointsLarge,
   CashbackLarge,
 } from './style'
