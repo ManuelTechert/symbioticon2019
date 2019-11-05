@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CardTitle, Container, Title, Card } from '../../components/globals'
 import LabelField from '../../components/LabelField'
-import Button from '../../components/Button'
+import { Button } from '../../components/Button'
 
 const Login = ({ setUserId }) => {
   const [benutzer, setBenutzer] = useState('doe')

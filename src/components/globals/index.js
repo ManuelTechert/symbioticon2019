@@ -57,6 +57,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-size: 32px;
   font-weight: 700;
+  margin-top: auto;
 `
 export const CardContainer = styled.div`
   margin-bottom: 30px;
@@ -69,6 +70,7 @@ export const CardTitle = styled.h2`
 `
 export const Card = styled.div`
     background-color: ${props => (props.bg ? props.bg : theme.bg.default)};
+    color: ${props => (props.color ? props.color : theme.text.default)};
     border-radius 12px;
     padding: 16px;
     margin-bottom: 16px;
