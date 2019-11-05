@@ -23,5 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
+# Data 
+.ipynb_checkpoints
 export_cda.xml
 export.xml
+result.json
