@@ -36,4 +36,15 @@ const YellowButton = styled.div`
 
 export const ButtonYellow = props => <YellowButton {...props} />
 
+const RedButton = styled.div`
+  background-color: #FF5A5F;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  font-size: larger;
+`
+
+export const ButtonRed = props => <RedButton {...props} />
+
 export default Button
