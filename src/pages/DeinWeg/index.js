@@ -48,7 +48,7 @@ const DeinWegEinsteiger = () => {
                 <Item flex={2}>
                     <div style={{ fontSize: "70%" }}>107 Punkte</div>
                     <div style={{ fontSize: "100%" }}>7€ Cashback</div>
-                    <div style={{ fontSize: "50%" }}>IN 4 WOCHEN, WENN DU SO WEITREMACHST</div>
+                    <div style={{ fontSize: "50%" }}>IN 4 WOCHEN, WENN DU SO WEITERMACHST</div>
                 </Item>
             </Row>
             <Title>

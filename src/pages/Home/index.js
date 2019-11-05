@@ -67,7 +67,9 @@ const tipps = [
                 </Row>
                 <Woche tag={2}/>
             </>
-        )],
+        ),
+            "/erstechallenge"
+        ],
     ],
     [
         ['Verbessere deinen Schlaf', (
@@ -77,13 +79,13 @@ const tipps = [
                 <SmallRedCenter>MEHR ERFAHREN</SmallRedCenter>
                 <ButtonSmall>Dunkler, leiser, kühler annehmen</ButtonSmall>
             </div>
-        )],
+        ), "/"],
         ['Schwimmkurs in deiner Nähe', (
             <div>
                 Du willst deine Technik verbessern und einen einfachen Einstieg in das sportliche Schwimmen erhalten?
                 Dann bist du beim Schwimmkurs im Hallenbad Kiesstein genau richtig!
             </div>
-        )],
+        ), "/"],
     ],
 ];
 
@@ -102,8 +104,8 @@ const Home = (props) => {
                 <LabelField label="Home"
                             field={<User style={{color: "#FF5A5F"}} onClick={() => history.push('/profile')}/>}/>
             </Title>
-            {hinweise.map(([title, component], i) => (
-                <Card key={i} style={{backgroundColor: "#F4D96D"}}>
+            {hinweise.map(([title, component, path], i) => (
+                <Card key={i} style={{backgroundColor: "#F4D96D"}}  onClick={() => history.push(path)}>
                     <Larger>{title}</Larger>
                     {component}
                 </Card>

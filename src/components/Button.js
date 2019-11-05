@@ -25,4 +25,15 @@ const SmallButton = styled.div`
 
 export const ButtonSmall = props => <SmallButton {...props}/>;
 
+const YellowButton = styled.div`
+    background-color: #F4D96D;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    font-size: larger;
+`;
+
+export const ButtonYellow = props => <YellowButton {...props}/>;
+
 export default Button

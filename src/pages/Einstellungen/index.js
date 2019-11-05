@@ -82,7 +82,7 @@ const Einstellungen = (props) => {
                 <TextDetails value={ukv} />
             </Card>
             <SmallRedCenter>
-                GESUNDHEITSPARNER ÄNDERN
+                GESUNDHEITSPARTNER ÄNDERN
             </SmallRedCenter>
         </Container>
     )
