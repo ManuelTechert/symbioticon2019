@@ -4,7 +4,7 @@ import LabelField from '../../components/LabelField'
 import { Button } from '../../components/Button'
 
 const Login = ({ setUserId }) => {
-  const [benutzer, setBenutzer] = useState('doe')
+  const [benutzer, setBenutzer] = useState('deere')
   const [password, setPassword] = useState('')
 
   const inputLabel = (
@@ -24,7 +24,7 @@ const Login = ({ setUserId }) => {
 
   return (
     <Container>
-      <Title>thrive</Title>
+      <Title>Thrive</Title>
       <CardTitle>Login</CardTitle>
       <Card>
         <LabelField label="Benutzer" field={inputLabel} />
