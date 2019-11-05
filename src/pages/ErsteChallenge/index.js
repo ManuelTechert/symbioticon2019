@@ -5,7 +5,7 @@ import Sportler from './Sportler.svg'
 import { ButtonYellow } from '../../components/Button'
 import { useHistory } from 'react-router-dom'
 
-const Thrive = () => {
+const ErsteChallenge = () => {
   const history = useHistory()
 
   return (
@@ -47,4 +47,4 @@ const Thrive = () => {
   )
 }
 
-export default Thrive
+export default ErsteChallenge
