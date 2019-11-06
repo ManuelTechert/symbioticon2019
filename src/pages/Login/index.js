@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Title, Card } from '../../components/globals'
+import { Container, Card } from '../../components/globals'
 import LabelField from '../../components/LabelField'
 import { Button } from '../../components/Button'
 import ThriveImage from './thrivelogin.svg'
@@ -8,7 +8,7 @@ import { HugeTitle, Subtitle } from './style'
 
 const Login = ({ setUserId }) => {
   const [benutzer, setBenutzer] = useState('deere')
-  const [password, setPassword] = useState('')
+  // const [password, setPassword] = useState('')
 
   const inputLabel = (
     <input
@@ -17,13 +17,13 @@ const Login = ({ setUserId }) => {
       autoFocus
     />
   )
-  const inputPassword = (
-    <input
-      type="password"
-      value={password}
-      onChange={e => setPassword(e.target.value)}
-    />
-  )
+  // const inputPassword = (
+  //   <input
+  //     type="password"
+  //     value={password}
+  //     onChange={e => setPassword(e.target.value)}
+  //   />
+  // )
 
   return (
     <Container>

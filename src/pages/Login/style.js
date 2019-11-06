@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { theme } from '../../components/theme'
 
 export const HugeTitle = styled.h1`
   font-weight: 900;
