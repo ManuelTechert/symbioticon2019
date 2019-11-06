@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 export const HugeTitle = styled.h1`
   font-weight: 900;
-  font-size: 80px;
+  font-size: 72px;
   text-align: center;
   margin-bottom: 0px;
+  margin-top: 16px;
 `
 
 export const Subtitle = styled.h2`

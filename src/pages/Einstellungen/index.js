@@ -74,10 +74,12 @@ const Einstellungen = props => {
           <div key={i}>
             <LabelField field={field} label={label} />
             {i < user.length - 1 && (
-              <hr
-                color={theme.brand.lightblue}
-                style={{ borderWidth: '0.1px' }}
-              />
+              <div>
+                <hr
+                  color={theme.brand.lightblue}
+                  style={{ borderWidth: '0.5px' }}
+                />
+              </div>
             )}
           </div>
         ))}
@@ -89,9 +91,8 @@ const Einstellungen = props => {
       </p>
       <Card>
         {dienste[id].map(([dienstname, icon], i) => (
-          <>
+          <div key={i}>
             <div
-              key={i}
               style={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -112,10 +113,10 @@ const Einstellungen = props => {
             {i < dienste[id].length - 1 && (
               <hr
                 color={theme.brand.lightblue}
-                style={{ borderWidth: '0.1px' }}
+                style={{ borderWidth: '0.5px' }}
               />
             )}
-          </>
+          </div>
         ))}
       </Card>
       <SmallRedCenter>MEHR DIENSTE VERBINDEN</SmallRedCenter>
