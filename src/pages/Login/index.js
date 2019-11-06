@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { CardTitle, Container, Title, Card } from '../../components/globals'
 import LabelField from '../../components/LabelField'
 import { Button } from '../../components/Button'
+import ThriveImage from './thrivelogin.svg'
 
 const Login = ({ setUserId }) => {
   const [benutzer, setBenutzer] = useState('deere')
@@ -24,8 +25,9 @@ const Login = ({ setUserId }) => {
 
   return (
     <Container>
-      <Title>Thrive</Title>
-      <CardTitle>Login</CardTitle>
+      <Title style={{ textAlign: 'center' }}>Thrive</Title>
+      <img src={ThriveImage} alt="thrive" width="100%" />
+      <br />
       <Card>
         <LabelField label="Benutzer" field={inputLabel} />
         <hr color="lightgrey" />
