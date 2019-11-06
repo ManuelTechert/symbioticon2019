@@ -9,7 +9,7 @@ import Home from './pages/Home'
 import Training from './pages/Training'
 import Thrive from './pages/Thrive'
 import ErsteChallenge from './pages/ErsteChallenge'
-import BesserSchlafen from "./pages/BesserSchlafen";
+import BesserSchlafen from './pages/BesserSchlafen'
 
 const PageWrapper = ({ userId, children }) => {
   const childrenWithProps = React.Children.map(children, (child, i) => {
@@ -23,6 +23,21 @@ const PageWrapper = ({ userId, children }) => {
     <Root>
       <Body>{childrenWithProps}</Body>
       <Footer />
+    </Root>
+  )
+}
+
+const PageWrapperNoFooter = ({ userId, children }) => {
+  const childrenWithProps = React.Children.map(children, (child, i) => {
+    return React.cloneElement(child, {
+      userId,
+      index: i,
+    })
+  })
+
+  return (
+    <Root>
+      <Body>{childrenWithProps}</Body>
     </Root>
   )
 }
@@ -46,9 +61,9 @@ function App() {
       <Router>
         <Switch>
           <Route path="/profile">
-            <PageWrapper userId={userId}>
+            <PageWrapperNoFooter userId={userId}>
               <Einstellungen />
-            </PageWrapper>
+            </PageWrapperNoFooter>
           </Route>
           <Route path="/deinweg">
             <PageWrapper userId={userId}>
