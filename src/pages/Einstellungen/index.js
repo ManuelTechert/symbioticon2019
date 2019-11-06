@@ -1,19 +1,22 @@
 import React from 'react'
 import {
-  CardTitle,
   Container,
   Card,
-  Smaller,
   SmallRedCenter,
   Subheading,
 } from '../../components/globals'
 import LabelField from '../../components/LabelField'
 import Avatar from '../../components/Avatar'
-import CheckBoxDetails from '../../components/CheckBoxDetails'
 import { useParams, Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight } from 'react-feather'
 import ukv from './url.png'
+import google from './google-cal.svg'
+import fitbit from './fitbit.svg'
+import headspace from './headspace.svg'
+import sleepcycle from './sleep-cycle.svg'
+
 import { theme } from '../../components/theme'
+import { Row } from '../../components/Flex'
 
 const werte = [
   [
@@ -35,8 +38,13 @@ const werte = [
 ]
 
 const dienste = [
-  [['Google Calendar']],
-  [['fitbit'], ['Google Calendar'], ['SleepCycle'], ['Headspace']],
+  [['Google Calendar', google]],
+  [
+    ['Google Calendar', google],
+    ['Headspace', headspace],
+    ['fitbit', fitbit],
+    ['Sleep Cycle', sleepcycle],
+  ],
 ]
 
 const Einstellungen = props => {
@@ -80,11 +88,34 @@ const Einstellungen = props => {
         wir die neue Erkenntnisse und neue Aktionen geben.
       </p>
       <Card>
-        {dienste[id].map((dienst, i) => (
-          <div key={i}>
-            <CheckBoxDetails value={dienst} />
-            {i < dienste[id].length - 1 && <hr color="lightgrey" />}
-          </div>
+        {dienste[id].map(([dienstname, icon], i) => (
+          <>
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <Row style={{ alignItems: 'center' }}>
+                <img
+                  src={icon}
+                  alt="app icon"
+                  style={{ height: '32px', marginRight: '8px' }}
+                />
+                <span>{dienstname}</span>
+              </Row>
+              <ChevronRight color={theme.brand.grey} />
+            </div>
+            {i < dienste[id].length - 1 && (
+              <hr
+                color={theme.brand.lightblue}
+                style={{ borderWidth: '0.1px' }}
+              />
+            )}
+          </>
         ))}
       </Card>
       <SmallRedCenter>MEHR DIENSTE VERBINDEN</SmallRedCenter>
@@ -104,12 +135,14 @@ const Einstellungen = props => {
           marginBottom: '96px',
         }}
       >
-        <img
-          src={ukv}
-          alt="ukv krankenversicherung"
-          style={{ height: '32px' }}
-        />
-        <span>Aktueller Cashback: 2€</span>
+        <Row style={{ alignItems: 'center' }}>
+          <img
+            src={ukv}
+            alt="ukv krankenversicherung"
+            style={{ height: '32px', marginRight: '8px' }}
+          />
+          <span>Aktueller Cashback: 2€</span>
+        </Row>
         <ChevronRight color={theme.brand.grey} />
       </Card>
     </Container>
