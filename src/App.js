@@ -9,7 +9,7 @@ import Home from './pages/Home'
 import Training from './pages/Training'
 import Thrive from './pages/Thrive'
 import ErsteChallenge from './pages/ErsteChallenge'
-import BesserSchlafen from "./pages/BesserSchlafen";
+import BesserSchlafen from './pages/BesserSchlafen'
 
 const PageWrapper = ({ userId, children }) => {
   const childrenWithProps = React.Children.map(children, (child, i) => {

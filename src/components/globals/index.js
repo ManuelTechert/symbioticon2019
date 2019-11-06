@@ -28,9 +28,13 @@ export const Smaller = styled.div`
 `
 
 export const SmallRedCenter = styled.div`
-  font-size: x-small;
-  color: red;
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 8px;
+  color: ${theme.brand.red};
   text-align: center;
+  margin-top: 8px;
+  margin-bottom: 32px;
 `
 
 export const Shadows = {

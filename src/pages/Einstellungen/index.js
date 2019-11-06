@@ -2,17 +2,18 @@ import React from 'react'
 import {
   CardTitle,
   Container,
-  Title,
   Card,
   Smaller,
   SmallRedCenter,
+  Subheading,
 } from '../../components/globals'
 import LabelField from '../../components/LabelField'
 import Avatar from '../../components/Avatar'
 import CheckBoxDetails from '../../components/CheckBoxDetails'
-import { useParams } from 'react-router-dom'
-import TextDetails from '../../components/TextDetails'
-import ukvSource from './url.png'
+import { useParams, Link } from 'react-router-dom'
+import { ChevronLeft, ChevronRight } from 'react-feather'
+import ukv from './url.png'
+import { theme } from '../../components/theme'
 
 const werte = [
   [
@@ -34,18 +35,9 @@ const werte = [
 ]
 
 const dienste = [
-  [
-    ['Google Calendar']
-  ],
-  [
-    ['fitbit'],
-    ['Google Calendar'],
-    ['SleepCycle'],
-    ['Headspace'],
-  ]
+  [['Google Calendar']],
+  [['fitbit'], ['Google Calendar'], ['SleepCycle'], ['Headspace']],
 ]
-
-const ukv = <img src={ukvSource} alt="ukv" width="30%" />
 
 const Einstellungen = props => {
   const { userId } = useParams()
@@ -54,25 +46,39 @@ const Einstellungen = props => {
 
   return (
     <Container>
-      <Title>
+      <Link
+        to="/"
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: '16px',
+        }}
+      >
+        <ChevronLeft color={theme.brand.grey} />
+        <span style={{ color: theme.brand.grey }}>Home</span>
+      </Link>
+      <Subheading>
         <LabelField label="Einstellungen" field={<Avatar id={id} />} />
-      </Title>
-      <CardTitle>Profil</CardTitle>
-      <Card>
+      </Subheading>
+      <Card style={{ marginBottom: '32px' }}>
         {user.map(([label, field], i) => (
           <div key={i}>
             <LabelField field={field} label={label} />
-            {i < user.length - 1 && <hr color="lightgrey" />}
+            {i < user.length - 1 && (
+              <hr
+                color={theme.brand.lightblue}
+                style={{ borderWidth: '0.1px' }}
+              />
+            )}
           </div>
         ))}
       </Card>
-      <CardTitle>
-        Verbundene Dienste
-        <Smaller>
-          Je mehr Dienste du verbindest, desto persönlicher und passender können
-          wir die neue Erkenntnisse und neue Aktionen geben.
-        </Smaller>
-      </CardTitle>
+      <Subheading>Verbundene Dienste</Subheading>
+      <p style={{ marginTop: '0px' }}>
+        Je mehr Dienste du verbindest, desto persönlicher und passender können
+        wir die neue Erkenntnisse und neue Aktionen geben.
+      </p>
       <Card>
         {dienste[id].map((dienst, i) => (
           <div key={i}>
@@ -82,18 +88,30 @@ const Einstellungen = props => {
         ))}
       </Card>
       <SmallRedCenter>MEHR DIENSTE VERBINDEN</SmallRedCenter>
-      <CardTitle>
-        Deine Versicherung
-        <Smaller>
-          Mit der Anbindung an deine Krankenversicherung erhältst du exklusive
-          Angebote und basierend auf deinen Punkten einen Rabatt auf deinen
-          Beitrag!
-        </Smaller>
-      </CardTitle>
-      <Card>
-        <TextDetails value={ukv} />
+
+      <Subheading>Deine Versicherung</Subheading>
+      <p style={{ marginTop: '0px' }}>
+        Mit der Anbindung an deine Krankenversicherung erhältst du exklusive
+        Angebote und basierend auf deinen Punkten einen Rabatt auf deinen
+        Beitrag!
+      </p>
+      <Card
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginBottom: '96px',
+        }}
+      >
+        <img
+          src={ukv}
+          alt="ukv krankenversicherung"
+          style={{ height: '32px' }}
+        />
+        <span>Aktueller Cashback: 2€</span>
+        <ChevronRight color={theme.brand.grey} />
       </Card>
-      <SmallRedCenter>GESUNDHEITSPARTNER ÄNDERN</SmallRedCenter>
     </Container>
   )
 }
