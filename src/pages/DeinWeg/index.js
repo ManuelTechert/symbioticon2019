@@ -14,9 +14,11 @@ import FitnessTracker from './fitness_tracker.svg'
 import Lowpoints from './LowPoints.svg'
 import Mediumpoints from './MediumPoints.svg'
 import Highpoints from './Highpoints.svg'
+import Starpoints from './starpoints.svg'
+
 import Hamburger from './Hamburger.svg'
 
-import { ButtonWhite, Button } from '../../components/Button'
+import { Button } from '../../components/Button'
 import {
   RankingsContainer,
   RankingRow,
@@ -39,7 +41,7 @@ const DeinWeg = props => {
 const WeitereServices = () => (
   <Card style={{ marginBottom: '96px' }}>
     <CardTitle>Verbinde weitere Services</CardTitle>
-    <Row>
+    <Row style={{ alignItems: 'flex-end' }}>
       <Item flex={3}>
         <Smaller>
           Je mehr Services und Dienste du verbindest, desto mehr Insights können
@@ -48,7 +50,11 @@ const WeitereServices = () => (
         </Smaller>
       </Item>
       <Item>
-        <img src={FitnessTracker} alt="Fitness Tracker" />
+        <img
+          src={FitnessTracker}
+          alt="Fitness Tracker"
+          style={{ height: '96px' }}
+        />
       </Item>
     </Row>
     <Button>Service verbinden</Button>
@@ -132,40 +138,56 @@ const DeinWegProfi = () => {
   return (
     <Container>
       <Title>Dein Weg</Title>
-      <Row style={{ paddingBottom: '10px' }}>
-        <Item>
-          <img src={Lowpoints} alt="low" />
-        </Item>
-        <Item flex={2}>
-          <div style={{ fontSize: '70%' }}>107 Punkte</div>
-          <div style={{ fontSize: '100%' }}>7€ Cashback</div>
-          <div style={{ fontSize: '50%' }}>VOR ZWEI WOCHEN</div>
-        </Item>
-      </Row>
-      <Row style={{ paddingBottom: '10px' }}>
-        <Item>
-          <img src={Mediumpoints} alt="medium" />
-        </Item>
-        <Item flex={2}>
-          <div style={{ fontSize: '120%' }}>128 Punkte</div>
-          <div style={{ fontSize: '150%' }}>7€ Cashback</div>
-          <div style={{ fontSize: '100%' }}>HEUTE</div>
-        </Item>
-      </Row>
-      <Row>
-        <Item>
-          <img src={Highpoints} alt="high" />
-        </Item>
-        <Item flex={2}>
-          <div style={{ fontSize: '70%' }}>150 Punkte</div>
-          <div style={{ fontSize: '100%' }}>8€ Cashback</div>
-          <div style={{ fontSize: '50%' }}>
-            IN 4 WOCHEN, WENN DU SO WEITERMACHST
-          </div>
-        </Item>
-      </Row>
-      <Title>Bereit für den nächsten Schritt?</Title>
-      <Card style={{ backgroundColor: '#F4D96D', color: 'black' }}>
+      <Card>
+        <RankingsContainer>
+          <RankingRow>
+            <img
+              src={Mediumpoints}
+              alt="medium points"
+              style={{ width: '24px', height: 'auto', marginRight: '16px' }}
+            />
+            <div>
+              <Points>107 Punkte</Points>
+              <Cashback>5€ Cashback</Cashback>
+              <Context>vor 2 wochen</Context>
+            </div>
+          </RankingRow>
+
+          <RankingRow>
+            <img
+              src={Highpoints}
+              alt="high points"
+              style={{ width: '32px', height: 'auto', marginRight: '16px' }}
+            />
+            <div>
+              <PointsLarge>128 Punkte</PointsLarge>
+              <CashbackLarge>7€ Cashback</CashbackLarge>
+              <Context>heute</Context>
+            </div>
+          </RankingRow>
+
+          <RankingRow last>
+            <img
+              src={Starpoints}
+              alt="star points"
+              style={{ width: '24px', height: 'auto', marginRight: '16px' }}
+            />
+            <div>
+              <Points>150 Punkte</Points>
+              <Cashback>8€ Cashback</Cashback>
+              <Context>
+                in 4 wochen <br /> wenn du so weiter machst
+              </Context>
+            </div>
+          </RankingRow>
+        </RankingsContainer>
+      </Card>
+
+      <Subheading>
+        Bereit für den nächsten <br />
+        Schritt?
+      </Subheading>
+      <Card bg={theme.brand.yellow}>
         <CardTitle>Ein ausgewogenes Frühstück essen</CardTitle>
         <Row>
           <Item flex={3}>
@@ -175,10 +197,12 @@ const DeinWegProfi = () => {
             </Smaller>
           </Item>
           <Item>
-            <img src={Hamburger} alt="Hamburger" />
+            <img src={Hamburger} alt="Hamburger" style={{ height: '96px' }} />
           </Item>
         </Row>
-        <ButtonWhite>Dieses Tool ausprobieren</ButtonWhite>
+        <Button bg={theme.bg.default} color={theme.text.default}>
+          Dieses Tool ausprobieren
+        </Button>
       </Card>
       <WeitereServices />
     </Container>
