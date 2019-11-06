@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { CardTitle, Container, Title, Card } from '../../components/globals'
+import { Container, Title, Card } from '../../components/globals'
 import LabelField from '../../components/LabelField'
 import { Button } from '../../components/Button'
 import ThriveImage from './thrivelogin.svg'
+
+import { HugeTitle, Subtitle } from './style'
 
 const Login = ({ setUserId }) => {
   const [benutzer, setBenutzer] = useState('deere')
@@ -25,13 +27,15 @@ const Login = ({ setUserId }) => {
 
   return (
     <Container>
-      <Title style={{ textAlign: 'center' }}>Thrive</Title>
-      <img src={ThriveImage} alt="thrive" width="100%" />
+      <HugeTitle>Thrive 🌱</HugeTitle>
+      <Subtitle>Dein Begleiter auf dem Weg zum gesünderen Ich</Subtitle>
       <br />
+      <img src={ThriveImage} alt="thrive" width="100%" />
+      <div style={{ marginBottom: '32px' }} />
       <Card>
         <LabelField label="Benutzer" field={inputLabel} />
-        <hr color="lightgrey" />
-        <LabelField label="Passwort" field={inputPassword} />
+        {/* <hr color="lightgrey" />
+        <LabelField label="Passwort" field={inputPassword} /> */}
       </Card>
       <Button
         onClick={() => {
@@ -39,7 +43,7 @@ const Login = ({ setUserId }) => {
           setUserId(userId)
         }}
       >
-        einloggen
+        Einloggen
       </Button>
     </Container>
   )
