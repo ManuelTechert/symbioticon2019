@@ -27,6 +27,10 @@ export const Smaller = styled.div`
   font-size: smaller;
 `
 
+export const Space32 = styled.div`
+  margin-bottom: 32px;
+`
+
 export const SmallRedCenter = styled.div`
   font-weight: bold;
   font-size: 8px;
