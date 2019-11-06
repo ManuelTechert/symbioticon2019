@@ -1,9 +1,7 @@
 import React from 'react'
 import {
-  CardTitle,
   Container,
   Card,
-  Smaller,
   SmallRedCenter,
   Subheading,
 } from '../../components/globals'
