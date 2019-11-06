@@ -30,6 +30,7 @@ import {
 } from './style'
 
 import { theme } from '../../components/theme'
+import { Info } from 'react-feather'
 
 const DeinWeg = props => {
   const { userId } = props
@@ -188,7 +189,16 @@ const DeinWegProfi = () => {
         Schritt?
       </Subheading>
       <Card bg={theme.brand.yellow}>
-        <CardTitle>Ein ausgewogenes Frühstück essen</CardTitle>
+        <span
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <CardTitle>Ein ausgewogenes Frühstück essen</CardTitle>
+          <Info color={theme.brand.grey} />
+        </span>
         <Row>
           <Item flex={3}>
             <Smaller>

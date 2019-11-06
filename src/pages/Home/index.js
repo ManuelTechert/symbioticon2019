@@ -18,6 +18,7 @@ import { theme } from '../../components/theme'
 import { Ball, BallContainer } from './style'
 import drawSleep from './draw-sleep.svg'
 import drawSports from './draw-sports.svg'
+import { Info } from 'react-feather'
 
 const Woche = () => {
   return (
@@ -54,7 +55,17 @@ const ErsteChallenge = () => {
 const Schlaf = () => {
   return (
     <Card>
-      <CardTitle>Verbessere deinen Schlaf</CardTitle>
+      <span
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        <CardTitle>Verbessere deinen Schlaf</CardTitle>
+        <Info color={theme.brand.grey} />
+      </span>
+
       <Row>
         <Item flex={7}>
           Basierend auf deinen letzten Workout Daten solltest du besonderen

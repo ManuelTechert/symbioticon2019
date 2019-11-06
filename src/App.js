@@ -27,6 +27,21 @@ const PageWrapper = ({ userId, children }) => {
   )
 }
 
+const PageWrapperNoFooter = ({ userId, children }) => {
+  const childrenWithProps = React.Children.map(children, (child, i) => {
+    return React.cloneElement(child, {
+      userId,
+      index: i,
+    })
+  })
+
+  return (
+    <Root>
+      <Body>{childrenWithProps}</Body>
+    </Root>
+  )
+}
+
 function App() {
   const [userId, setUserId] = useState(null)
   if (userId == null) {
@@ -46,9 +61,9 @@ function App() {
       <Router>
         <Switch>
           <Route path="/profile">
-            <PageWrapper userId={userId}>
+            <PageWrapperNoFooter userId={userId}>
               <Einstellungen />
-            </PageWrapper>
+            </PageWrapperNoFooter>
           </Route>
           <Route path="/deinweg">
             <PageWrapper userId={userId}>
