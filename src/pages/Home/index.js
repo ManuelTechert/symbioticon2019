@@ -5,6 +5,7 @@ import {
   Container,
   Title,
   Subheading,
+  Space32,
 } from '../../components/globals'
 import { Button } from '../../components/Button'
 import Action from '../../components/Action'
@@ -146,7 +147,7 @@ const Home = props => {
           <ErsteChallenge />
 
           <Card bg={theme.brand.lightblue}>
-            <CardTitle>Über thrive</CardTitle>
+            <CardTitle>Über Thrive</CardTitle>
             <Row style={{ alignItems: 'flex-end', margin: 'auto' }}>
               <span>
                 Wir zeigen Dir, wie du aus deinen Gesundheitsdaten mehr machen
@@ -159,6 +160,7 @@ const Home = props => {
               />
             </Row>
           </Card>
+          <Space32 />
 
           <Subheading>Deine Aufgaben</Subheading>
           {actionsEinsteiger.map(([aufgabe, time, checked], i) => (
@@ -172,6 +174,8 @@ const Home = props => {
           <Schlaf />
 
           <Schwimmkurs />
+
+          <Space32 />
 
           <Subheading>Deine Aufgaben</Subheading>
           {actionsProfi.map(([aufgabe, time, checked, color, font], i) => (

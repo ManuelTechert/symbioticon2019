@@ -6,6 +6,7 @@ import {
   Card,
   Smaller,
   Subheading,
+  Space32,
 } from '../../components/globals'
 import { Row, Item } from '../../components/Flex'
 
@@ -112,6 +113,8 @@ const DeinWegEinsteiger = () => {
         </RankingsContainer>
       </Card>
 
+      <Space32 />
+
       <Subheading>
         Bereit für den nächsten <br />
         Schritt?
@@ -183,6 +186,8 @@ const DeinWegProfi = () => {
           </RankingRow>
         </RankingsContainer>
       </Card>
+
+      <Space32 />
 
       <Subheading>
         Bereit für den nächsten <br />
